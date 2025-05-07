@@ -220,7 +220,7 @@ button {
   font-size: 14px;
 }
 .hero__description {
-  max-width: 600px;
+  max-width: 580px;
   margin-bottom: 1rem;
 }
 .hero__texte {
@@ -255,6 +255,52 @@ button {
 }
 .hero__social-lien:hover {
   color: #3EBFAB;
+}
+
+.galerie {
+  padding: 4rem 1rem;
+  margin: 0 auto;
+}
+.galerie__titre {
+  margin-bottom: 1rem;
+  color: #00475B;
+}
+.galerie__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.galerie__element {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.galerie__element:hover {
+  transform: translateY(-5px);
+}
+.galerie__image {
+  height: 12rem;
+  min-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  background-color: #00475B;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+.footer__contenu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.footer__copyright {
+  font-size: 0.9rem;
 }
 
 /* composants */
