@@ -1,0 +1,39 @@
+// Styles du composant de recherche
+.recherche {
+    &__form {
+      display: flex;
+      align-items: center;
+    }
+
+    &__champ{
+      display: flex;
+      align-items: center;
+      border: 1px solid $couleur-gris;
+      border-radius: 4px;
+      background-color: $couleur-blanche;
+      width: 100%;
+      max-width:250px;
+
+        &:hover .fas{ color: $couleur-primaire;}
+    }
+
+    &__icon{
+        color: #666;
+        margin-right: 8px;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+    
+    &__input {
+      padding: 0.5rem 1rem;
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+      background: transparent;
+      min-width: 0;
+
+        &::placeholder {
+          color: $couleur-gris-fonce;
+        }
+    }
+  }

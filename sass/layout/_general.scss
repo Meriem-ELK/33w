@@ -1,0 +1,47 @@
+// General CSS
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: $couleur-texte;
+    background-color: $couleur-blanche;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  button, input, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+// La case à cocher cachée qui contrôle le menu
+[id=menu-mobile-toggle]{
+  display: none;
+}

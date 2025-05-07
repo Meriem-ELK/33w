@@ -1,5 +1,5 @@
 /*
-Theme Name: theme-w33
+Theme Name: theme-33w
 Theme URI: https://referenced.ca
 Author: Meriem El kouarir
 Author URI: https://github.com/Meriem-ELK
@@ -9,11 +9,10 @@ Tested up to: 6.2
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: theme-w33
+Text Domain: theme-33w
 */
 
 /* Importation de feuille de style du thème */
-
 
 /* Variables */
 @import 'variable/couleurs';
@@ -22,9 +21,9 @@ Text Domain: theme-w33
 @import 'base/titre';
 
 /* Layout */
+@import 'layout/general';
 @import 'layout/entete';
-
+@import 'layout/hero';
 
 /* composants */
-@import 'composants/bouton';
-@import 'composants/menu';
+@import 'composants/recherche';
