@@ -69,6 +69,7 @@ ul, ol {
 button, input, select, textarea {
   font-family: inherit;
   font-size: 1rem;
+  outline: none;
 }
 
 button {
@@ -119,6 +120,7 @@ button {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  text-transform: uppercase;
 }
 @media (max-width: 768px) {
   .header__menu {
@@ -336,4 +338,47 @@ button {
 }
 .recherche__input::placeholder {
   color: #666666;
+}
+
+.form-inscription {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  background-color: #FFFFFF;
+  border: solid 1px #aaa;
+  box-shadow: 0 5px 10px 0 #aaa;
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.form-inscription__label-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-inscription__input {
+  border: 1px solid #3EBFAB;
+  padding-left: 5px;
+}
+.form-inscription__input::placeholder {
+  color: #c0c0c0;
+  font-size: 13px;
+}
+.form-inscription__bouton-contenu {
+  align-content: flex-end;
+}
+.form-inscription__bouton {
+  width: 200px;
+  border: 1px solid #3EBFAB;
+  padding: 0px 10px;
+  text-transform: uppercase;
+}
+.form-inscription__bouton:hover {
+  background-color: #3EBFAB;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 1200px) {
+  .form-inscription {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
