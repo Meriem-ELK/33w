@@ -1,47 +1,49 @@
 // Styles du composant de formulaire d'inscription
 
 .form-inscription {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  background-color: $couleur-blanche;
+  border: solid 1px #aaa;
+  box-shadow: 0 5px 10px 0 #aaa;
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &__label-input {
     display: flex;
-    padding: 20px;
-    gap: 20px;
-    background-color: $couleur-blanche;
-    border: solid 1px #aaa;
-    box-shadow: 0 5px 10px 0 #aaa;
-    position: absolute;
-    bottom: -2%;
-    left: 50%;
-    transform: translateX(-50%);
-
-        &__label-input {
-            display: flex;
-            flex-direction: column;
-            
-        }
-        &__input {
-            border: 1px solid $couleur-primaire;
-            padding-left: 5px;
-            &::placeholder {
-                color: $couleur-gris-clair;
-                font-size: 13px;
-              }
-        }
-  
-        &__bouton-contenu {
-             align-content: flex-end;
-        }
-        &__bouton {
-            width: 200px;
-            border: 1px solid $couleur-primaire;
-            padding: 0px 10px;
-            text-transform: uppercase;
-
-                &:hover{
-                    background-color: $couleur-primaire;
-                    color: $couleur-blanche;
-                }
-        }
-
-        @media screen and (max-width: 1200px) {
-            display: none;
-        }
+    flex-direction: column;
   }
+  &__input {
+    border: 1px solid $couleur-primaire;
+    padding-left: 5px;
+    &::placeholder {
+      color: $couleur-gris-clair;
+      font-size: 13px;
+    }
+  }
+
+  &__bouton-contenu {
+    align-content: flex-end;
+  }
+  &__bouton {
+    width: 200px;
+    background-color: $couleur-primaire;
+    border: 1px solid $couleur-primaire;
+    color: $couleur-blanche;
+    padding: 0px 10px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $couleur-blanche;
+      color: $couleur-noir;
+      border: 1px solid $couleur-primaire;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}

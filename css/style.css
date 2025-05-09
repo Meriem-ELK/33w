@@ -197,7 +197,6 @@ button {
   top: 90px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 90px);
   background-color: #FFFFFF;
   z-index: 1;
   padding: 1rem;
@@ -369,13 +368,16 @@ button {
 }
 .form-inscription__bouton {
   width: 200px;
+  background-color: #3EBFAB;
   border: 1px solid #3EBFAB;
+  color: #FFFFFF;
   padding: 0px 10px;
   text-transform: uppercase;
 }
 .form-inscription__bouton:hover {
-  background-color: #3EBFAB;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #252525;
+  border: 1px solid #3EBFAB;
 }
 @media screen and (max-width: 1200px) {
   .form-inscription {
