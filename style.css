@@ -88,6 +88,32 @@ button {
   display: none;
 }
 
+@media (max-width: 768px) {
+  [id=menu-mobile-toggle]:checked ~ .header__menu-toggle::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f00d";
+    color: #3EBFAB;
+  }
+  [id=menu-mobile-toggle]:checked ~ .header__navigation .header__navigation-nav {
+    display: block;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 1;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+}
+@media (min-width: 768px) {
+  [id=menu-mobile-toggle]:checked ~ .header__navigation .header__navigation-nav {
+    background-color: transparent;
+    position: relative;
+    top: 0;
+  }
+}
 .header {
   background-color: #F5F5F5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -199,25 +225,6 @@ button {
   }
 }
 
-@media (max-width: 600px) {
-  [id=menu-mobile-toggle]:checked ~ .header__menu-toggle::before {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    content: "\f00d";
-    color: #3EBFAB;
-  }
-  [id=menu-mobile-toggle]:checked ~ .header__navigation .header__navigation-nav {
-    display: block;
-    position: fixed;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background-color: #FFFFFF;
-    z-index: 1;
-    padding: 1rem;
-    overflow-y: auto;
-  }
-}
 .hero {
   position: relative;
   height: 80vh;

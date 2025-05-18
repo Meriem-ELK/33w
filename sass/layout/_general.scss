@@ -53,3 +53,36 @@ button {
 [id="menu-mobile-toggle"] {
   display: none;
 }
+
+// Style menu mobile
+@media (max-width: 768px) {
+  [id="menu-mobile-toggle"]:checked {
+    ~ .header__menu-toggle::before {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      content: "\f00d";
+      color: $couleur-primaire;
+    }
+
+    ~ .header__navigation .header__navigation-nav {
+      display: block;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      background-color: $couleur-blanche;
+      z-index: 1;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  [id="menu-mobile-toggle"]:checked
+    ~ .header__navigation
+    .header__navigation-nav {
+    background-color: transparent;
+    positgit 
+  }
+}
