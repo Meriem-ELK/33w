@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/*
+Theme Name: theme-33w
+Theme URI: https://referenced.ca
+Author: Meriem El kouarir
+Author URI: https://github.com/Meriem-ELK
+Description: Thème de base développer dans le cadre du cours de Worpress
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: theme-33w
+*/
+/* Importation de feuille de style du thème */
+/* Variables */
+/* Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: #252525;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(0.5rem, 3vw, 1rem);
+}
+
+/* Layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #252525;
+  background-color: #FFFFFF;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+[id=menu-mobile-toggle] {
+  display: none;
+}
+
+.header {
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header__contenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+}
+.header__logo-image {
+  height: 75px;
+  width: auto;
+}
+.header__navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 1100px) {
+  .header__navigation {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+.header__navigation-nav {
+  position: relative;
+}
+@media (max-width: 768px) {
+  .header__navigation-nav {
+    display: none;
+  }
+}
+.header__menu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .header__menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.header__menu-element {
+  margin: 0 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 0.2rem;
+  transition: color 0.3s ease;
+  color: #00475B;
+}
+.header__menu-element:hover {
+  color: #3EBFAB;
+}
+.header__menu-lien {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.2rem;
+  color: #00475B;
+  transition: color 0.3s ease;
+}
+.header__menu-lien:hover {
+  color: #3EBFAB;
+}
+@media (max-width: 768px) {
+  .header__menu-lien {
+    display: block;
+    padding: 1rem;
+  }
+}
+.header__recherche {
+  flex: 0 0 auto;
+  margin-left: 1rem;
+}
+@media (max-width: 992px) {
+  .header__recherche {
+    margin-left: auto;
+  }
+}
+@media (max-width: 768px) {
+  .header__recherche {
+    display: none;
+  }
+}
+.header__menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header__menu-toggle {
+    display: block;
+  }
+  .header__menu-toggle::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f0c9";
+    font-size: 1.5rem;
+    color: #00475B;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  [id=menu-mobile-toggle]:checked ~ .header__menu-toggle::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f00d";
+    color: #3EBFAB;
+  }
+  [id=menu-mobile-toggle]:checked ~ .header__navigation .header__navigation-nav {
+    display: block;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 1;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+}
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(images/acores.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.hero__contenu {
+  padding: 2rem;
+  color: #252525;
+  max-width: 100%;
+  font-size: 14px;
+}
+.hero__description {
+  max-width: 580px;
+  margin-bottom: 1rem;
+}
+.hero__texte {
+  margin-bottom: 0.5rem;
+}
+.hero__contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.hero__contact-info {
+  margin-bottom: 0.5rem;
+}
+.hero__inscrire-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #00475B;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  max-width: fit-content;
+}
+.hero__inscrire-btn:hover {
+  background-color: #3EBFAB;
+}
+.hero__social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+.hero__social-lien:hover {
+  color: #3EBFAB;
+}
+
+.galerie {
+  padding: 4rem 1rem;
+  margin: 0 auto;
+}
+.galerie__titre {
+  margin-bottom: 1rem;
+  color: #00475B;
+}
+.galerie__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.galerie__element {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.galerie__element:hover {
+  transform: translateY(-5px);
+}
+.galerie__image {
+  height: 12rem;
+  min-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  background-color: #00475B;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+.footer__contenu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.footer__copyright {
+  font-size: 0.9rem;
+}
+
+/* composants */
+.recherche__form {
+  display: flex;
+  align-items: center;
+}
+.recherche__champ {
+  display: flex;
+  align-items: center;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 250px;
+}
+.recherche__champ:hover .fas {
+  color: #3EBFAB;
+}
+.recherche__icon {
+  color: #666;
+  margin-right: 8px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.recherche__input {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  background: transparent;
+  min-width: 0;
+}
+.recherche__input::placeholder {
+  color: #666666;
+}
+
+.form-inscription {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  background-color: #FFFFFF;
+  border: solid 1px #aaa;
+  box-shadow: 0 5px 10px 0 #aaa;
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.form-inscription__label-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-inscription__input {
+  border: 1px solid #3EBFAB;
+  padding-left: 5px;
+}
+.form-inscription__input::placeholder {
+  color: #c0c0c0;
+  font-size: 13px;
+}
+.form-inscription__bouton-contenu {
+  align-content: flex-end;
+}
+.form-inscription__bouton {
+  width: 200px;
+  background-color: #3EBFAB;
+  border: 1px solid #3EBFAB;
+  color: #FFFFFF;
+  padding: 0px 10px;
+  text-transform: uppercase;
+}
+.form-inscription__bouton:hover {
+  background-color: #FFFFFF;
+  color: #252525;
+  border: 1px solid #3EBFAB;
+}
+@media screen and (max-width: 1200px) {
+  .form-inscription {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
