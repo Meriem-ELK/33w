@@ -6,7 +6,6 @@
 ?>
 
 <?php get_header(); ?>
-<h1>trace a retirer ------------- front-page.php ---------------------</h1>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero__contenu">
@@ -98,7 +97,7 @@
             <?php 
             /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
             if (has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail');
+                the_post_thumbnail('thumbnail', array('class' => 'populaire__image'));
             }
             ?>
             
@@ -107,7 +106,7 @@
                 /* Affiche le titre principal du `post`*/ 
                 the_title(); ?></h2>
             
-                <div><?php 
+                <div class="populaire__contenu_texte"><?php 
                 /* Cette fonction permet d'afficher l'ensemble du contenu du post (article ou page) */
                 $lien = " <a href='" . get_permalink() . "' class='populaire__lien'>Lire la suite <i class='fas fa-arrow-right'></i>
 </a>";

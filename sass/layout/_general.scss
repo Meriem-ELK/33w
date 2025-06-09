@@ -16,6 +16,13 @@ body {
   line-height: 1.6;
   color: $couleur-texte;
   background-color: $couleur-blanche;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 img {
@@ -53,7 +60,6 @@ section {
 }
 
 // La case à cocher cachée qui contrôle le menu
-
 [id="menu-mobile-toggle"] {
   display: none;
 }

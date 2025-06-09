@@ -3,7 +3,7 @@
   background-color: $couleur-secondaire;
   color: $couleur-blanche;
   padding: 1rem 0;
-  margin-top: 2rem;
+  flex-shrink: 0;
 
   &__contenu {
     max-width: 1200px;

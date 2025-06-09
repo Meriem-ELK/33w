@@ -17,6 +17,7 @@
 <?php wp_head(); ?>
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="header__contenu">
@@ -50,3 +51,4 @@
             </div>
         </div>
     </header>
+      <main>
