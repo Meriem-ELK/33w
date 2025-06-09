@@ -15,18 +15,19 @@ Text Domain: theme-33w
 /* Importation de feuille de style du thème */
 
 /* Variables */
-@import 'variable/couleurs';
+@import "variable/couleurs";
 
 /* Base */
-@import 'base/titre';
+@import "base/titre";
 
 /* Layout */
-@import 'layout/general';
-@import 'layout/entete';
-@import 'layout/hero';
-@import 'layout/galerie';
-@import 'layout/footer';
+@import "layout/general";
+@import "layout/entete";
+@import "layout/hero";
+@import "layout/galerie";
+@import "layout/footer";
+@import "layout/populaire";
 
 /* composants */
-@import 'composants/recherche';
-@import 'composants/form-inscription';
+@import "composants/recherche";
+@import "composants/form-inscription";

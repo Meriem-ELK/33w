@@ -1,13 +1,13 @@
 // Couleurs principales
-$couleur-primaire: #3EBFAB;
-$couleur-secondaire: #00475B;
-$couleur-accent: #F07C00;
+$couleur-primaire: #3ebfab;
+$couleur-secondaire: #00475b;
+$couleur-accent: #f07c00;
 
 // Couleurs neutres
-$couleur-blanche: #FFFFFF;
-$couleur-clair: #F5F5F5;
-$couleur-gris: #E0E0E0;
-$couleur-gris-clair:#c0c0c0;
+$couleur-blanche: #ffffff;
+$couleur-clair: #f5f5f5;
+$couleur-gris: #e0e0e0;
+$couleur-gris-clair: #c0c0c0;
 $couleur-gris-fonce: #666666;
 $couleur-noir: #252525;
 
@@ -15,3 +15,7 @@ $couleur-noir: #252525;
 $couleur-texte: $couleur-noir;
 $couleur-texte-clair: $couleur-blanche;
 $couleur-titre: $couleur-secondaire;
+
+//Typographie
+$police-titres: "Montserrat", sans-serif;
+$police-texte: "Poppins", sans-serif;
