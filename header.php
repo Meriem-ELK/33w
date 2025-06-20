@@ -41,12 +41,7 @@
                     ?>   
                 <!-- --> 
                 <div class="header__recherche recherche">
-                    <form class="recherche__form">
-                        <div class="recherche__champ">
-                            <input type="text" class="recherche__input" aria-label="Recherche" placeholder="Recherche...">
-                            <i class="fas fa-search recherche__icon"></i>
-                        </div>
-                    </form>
+                   <?php get_search_form() ?>
                 </div>
             </div>
         </div>

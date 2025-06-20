@@ -1,13 +1,13 @@
 <?php
 
 /**
- * le modèle index
+ * le modèle single.php
  * Représente le modèle par défaut
  */
 
 ?>
-<?php get_header(); ?>
 
+<?php get_header() ?>
 <!-- Détails de l'article -->
 <?php if (have_posts()) : 
     while (have_posts()) :
@@ -79,7 +79,5 @@
             </div>
 
 </div>
-<?php get_footer(); ?>
 
-</body>
-</html>
+<?php get_footer();

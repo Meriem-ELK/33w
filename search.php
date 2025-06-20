@@ -6,15 +6,14 @@
  */
 
 ?>
-<?php get_header(); ?>
 
-<!-- Détails de l'article -->
+<?php get_header() ?>
+<div class="post">
 <?php if (have_posts()) : 
     while (have_posts()) :
     the_post(); 
     ?>  
 
-<div class="post">
     <article class="post__contenu">
 
         <div class="post__details">
@@ -61,25 +60,8 @@
     </article>
 
     <?php endwhile; endif; ?>
-
-        <!-- Sidebar -->
-        <aside class="post__sidebar">
-            <!-- Partage social -->
-            <div class="post__share">
-                <h3>Partager cet article</h3>
-                <div class="share-buttons">
-                    <a href="#" target="_blank" class="share-btn facebook">
-                       <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="share-btn twitter">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    
-                </div>
-            </div>
-
+ 
 </div>
-<?php get_footer(); ?>
 
-</body>
-</html>
+
+<?php get_footer();

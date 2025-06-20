@@ -8,6 +8,14 @@
 <?php get_header(); ?>
     <!-- Hero Section -->
     <section class="hero">
+         <?php
+/*
+*Template-part Hero.php
+* Permet d'afficher la section hero
+*/
+?>
+
+
         <div class="hero__contenu">
             <h1 class="hero__titre">Voyagez Autrement avec Exclu Voyages !</h1>
             <div class="hero__description">
@@ -47,8 +55,8 @@
               <button class="form-inscription__bouton">S'inscrire</button>
             </div>
           </form>
-
     </section>
+
 
     <!-- Hero Galerie -->
     <section class="galerie">

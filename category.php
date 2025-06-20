@@ -13,7 +13,7 @@
         <div class="category__contenu">
             
             <?php if (has_post_thumbnail()) {
-              the_post_thumbnail('thumbnail', array('class' => 'category__image')); //afficher l'image miniature
+              the_post_thumbnail('medium', array('class' => 'category__image')); //afficher l'image miniature
             
               }?>
           
