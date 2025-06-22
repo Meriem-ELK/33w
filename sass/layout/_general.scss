@@ -188,5 +188,9 @@ section {
 }
 
 .fa-thermometer-half {
-  color: #ff9800; 
+  color: #ff9800;
+}
+
+.category__titre:hover {
+  color: $couleur-accent;
 }

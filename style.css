@@ -212,6 +212,10 @@ section {
   color: #ff9800;
 }
 
+.category__titre:hover {
+  color: #f07c00;
+}
+
 .header {
   background-color: #f5f5f5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
