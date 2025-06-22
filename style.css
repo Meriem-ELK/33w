@@ -418,7 +418,6 @@ section {
   padding: 40px 20px 20px;
 }
 .site-footer .footer-container {
-  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -476,6 +475,7 @@ section {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  font-size: 30px;
 }
 .site-footer .social-section .social-links a {
   color: #ffffff;
