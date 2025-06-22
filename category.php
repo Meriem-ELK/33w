@@ -10,26 +10,44 @@
         while (have_posts()) {
             the_post();
     ?>
-        <div class="category__contenu">
+<div class="category__contenu">
             
-            <?php if (has_post_thumbnail()) {
-              the_post_thumbnail('medium', array('class' => 'category__image')); //afficher l'image miniature
-            
-              }?>
+        <?php if (has_post_thumbnail()) : ?>
+        <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('medium', array('class' => 'category__image')); ?>
+        </a>
+        <?php endif; ?>
+
           
     <div class="category__details">
-            <h2 class="category__titre"><?php the_title(); ?></h2>
+            <h2 class="category__titre">
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h2>
             <!-- Affiche le contenu complet de l'article -->
             <?php the_content(); ?>
 
-            <?php if (get_the_category()) : ?>
+            <!-- Afficher catégorie-->
+            <?php
+                    $categories = get_the_category();
+                    $child_cats = [];
+
+                    foreach ( $categories as $cat ) {
+                        if ( $cat->category_parent != 0 ) {
+                            $child_cats[] = $cat->name;
+                        }
+                    }
+
+                    if ( !empty($child_cats) ) : ?>
                         <div class="category__categories">
-                            <i class="fas fa-folder"></i><?php the_category(', '); ?>
+                            <i class="fas fa-folder"></i>
+                            <?php echo implode(', ', $child_cats); ?>
                         </div>
             <?php endif; ?>
 
     </div>
-        </div>
+</div>
     <?php
         }
     } ?>

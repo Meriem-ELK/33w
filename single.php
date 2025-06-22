@@ -44,7 +44,15 @@
                 <?php if (has_category()) : ?>
                     <span class="post__category">
                         <i class="icon-tag"></i>
-                        <?php the_category(', '); ?>
+                        <?php
+                            $categories = get_the_category();
+
+                            foreach ( $categories as $cat ) {
+                                if ( $cat->category_parent != 0 ) {
+                                    echo $cat->name . ' ';
+                                }
+                            }
+                        ?>
                     </span>
                 <?php endif; ?>
             </div>
