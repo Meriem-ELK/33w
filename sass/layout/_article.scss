@@ -44,6 +44,28 @@
     font-weight: 700;
     line-height: 1.3;
   }
+
+  &_temperature {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid $couleur-primaire;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #495057;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 .populaire__contenu_titre:hover {

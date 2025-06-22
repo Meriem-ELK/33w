@@ -16,12 +16,22 @@
                 the_title(); ?></h2>
             
                     <div class="populaire__contenu_texte">
+                            <!-- Informations température -->
+                            <div class="populaire__contenu_temperature">
+                                <div class="populaire__contenu_info">
+                                    <p><span><i class="fas fa-temperature-low"></i> Température minimum: <strong></span> <?php the_field('temperature_minimum'); ?>°C</strong></p>
+                                    <p><span><i class="fas fa-temperature-high"></i> Température maximum:<strong></span> <?php the_field('temperature_maximum'); ?>°C</strong></p>
+                                    <p><span><i class="fas fa-thermometer-half"></i> Température moyenne: <strong></span> <?php the_field('temperature_moyenne'); ?>°C</strong></p>
+                                </div>
+                            </div>
+
                             <?php 
                             /* Cette fonction permet d'afficher l'ensemble du contenu du post (article ou page) */
                             $lien = "<a href='" . get_permalink() . "' class='populaire__lien'>Lire la suite <i class='fas fa-arrow-right'></i></a>";
                                             echo wp_trim_words(get_the_excerpt(), 15, $lien);
                             ?>
                     </div>
+
             </div>
         </article>
         
