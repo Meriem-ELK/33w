@@ -11,6 +11,10 @@
             ?>
             
             <div class="populaire__contenu">
+            <div class="populaire__contenu-note">
+                <?php the_field('appreciation'); ?><i class="fas fa-star"></i>
+            </div>
+
                 <h2 class="populaire__contenu_titre"><?php 
                 /* Affiche le titre principal du `post`*/ 
                 the_title(); ?></h2>
@@ -19,8 +23,8 @@
                             <!-- Informations température -->
                             <div class="populaire__contenu_temperature">
                                 <div class="populaire__contenu_info">
-                                    <p><span><i class="fas fa-temperature-low"></i> Température minimum: <strong></span> <?php the_field('temperature_minimum'); ?>°C</strong></p>
-                                    <p><span><i class="fas fa-temperature-high"></i> Température maximum:<strong></span> <?php the_field('temperature_maximum'); ?>°C</strong></p>
+                                    <p><span><i class="fas fa-temperature-low"></i> Température min: <strong></span> <?php the_field('temperature_minimum'); ?>°C</strong></p>
+                                    <p><span><i class="fas fa-temperature-high"></i> Température max:<strong></span> <?php the_field('temperature_maximum'); ?>°C</strong></p>
                                     <p><span><i class="fas fa-thermometer-half"></i> Température moyenne: <strong></span> <?php the_field('temperature_moyenne'); ?>°C</strong></p>
                                 </div>
                             </div>

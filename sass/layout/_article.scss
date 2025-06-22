@@ -66,6 +66,13 @@
       align-items: center;
     }
   }
+
+  &-note {
+    color: #ffd700;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
 
 .populaire__contenu_titre:hover {

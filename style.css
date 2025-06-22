@@ -560,6 +560,12 @@ section {
   justify-content: space-between;
   align-items: center;
 }
+.populaire__contenu-note {
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
 .populaire__contenu_titre:hover {
   color: #f07c00;
