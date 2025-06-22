@@ -216,6 +216,14 @@ section {
   color: #f07c00;
 }
 
+.post__meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .header {
   background-color: #f5f5f5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -648,6 +656,7 @@ section {
   color: #f07c00;
   margin-top: auto;
   align-items: center;
+  font-size: 14px;
 }
 .category__categories .fas {
   padding-right: 5px;

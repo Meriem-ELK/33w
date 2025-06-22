@@ -194,3 +194,11 @@ section {
 .category__titre:hover {
   color: $couleur-accent;
 }
+
+.post__meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
