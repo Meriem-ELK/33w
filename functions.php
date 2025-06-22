@@ -49,4 +49,5 @@ if ( $query->is_home() && $query->is_main_query() && ! is_admin() ) {
  }
  add_action( 'pre_get_posts', 'modifie_requete_principal' );
 
- ?>
+
+?>

@@ -100,6 +100,9 @@ section {
 }
 
 @media (max-width: 768px) {
+  main {
+    padding: 0 10px;
+  }
   [id=menu-mobile-toggle]:checked ~ .header__menu-toggle::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
@@ -393,20 +396,91 @@ section {
   object-position: center;
 }
 
-.footer {
-  background-color: #00475b;
-  color: #ffffff;
-  padding: 1rem 0;
-  flex-shrink: 0;
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px 20px;
 }
-.footer__contenu {
-  max-width: 1200px;
+.site-footer .footer-container {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.footer__copyright {
-  font-size: 0.9rem;
+.site-footer .footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+.site-footer .footer-section .header__menu-element {
+  padding: 0px;
+}
+.site-footer .footer-section h3 {
+  color: #3ebfab;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.site-footer .footer-links,
+.site-footer .footer-nav {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .footer-links li,
+.site-footer .footer-nav li {
+  margin-bottom: 8px;
+}
+.site-footer .footer-links a,
+.site-footer .footer-nav a {
+  color: #ccc;
+  text-decoration: none;
+}
+.site-footer .footer-links a:hover,
+.site-footer .footer-nav a:hover {
+  color: white;
+}
+.site-footer .contact-info p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.site-footer .contact-info a {
+  color: #3ebfab;
+  text-decoration: none;
+}
+.site-footer .contact-info a:hover {
+  text-decoration: underline;
+}
+.site-footer .social-section {
+  margin: 30px 0;
+}
+.site-footer .social-section h3 {
+  color: #3ebfab;
+  margin-bottom: 15px;
+}
+.site-footer .social-section .social-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.site-footer .social-section .social-links a {
+  color: #ffffff;
+}
+.site-footer .social-section .social-links a i:hover {
+  color: #3ebfab;
+}
+.site-footer .footer-bottom {
+  text-align: center;
+  border-top: 1px solid #555;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.site-footer .footer-bottom p {
+  color: #ccc;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .site-footer .footer-container {
+    flex-direction: column;
+  }
 }
 
 /* Section Populaire - Articles */

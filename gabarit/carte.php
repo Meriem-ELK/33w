@@ -1,0 +1,31 @@
+    <?php if (have_posts()) : 
+        while (have_posts()) :
+        the_post(); ?>
+        
+        <article class="populaire__article">
+            <?php 
+            /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('thumbnail', array('class' => 'populaire__image'));
+            }
+            ?>
+            
+            <div class="populaire__contenu">
+                <h2 class="populaire__contenu_titre"><?php 
+                /* Affiche le titre principal du `post`*/ 
+                the_title(); ?></h2>
+            
+                    <div class="populaire__contenu_texte">
+                            <?php 
+                            /* Cette fonction permet d'afficher l'ensemble du contenu du post (article ou page) */
+                            $lien = "<a href='" . get_permalink() . "' class='populaire__lien'>Lire la suite <i class='fas fa-arrow-right'></i></a>";
+                                            echo wp_trim_words(get_the_excerpt(), 15, $lien);
+                            ?>
+                    </div>
+            </div>
+        </article>
+        
+        <?php endwhile; 
+        else : ?>
+            <p>Aucun article trouvé.</p>
+        <?php endif; ?>

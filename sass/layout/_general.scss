@@ -66,6 +66,9 @@ section {
 
 // Style menu mobile
 @media (max-width: 768px) {
+  main {
+    padding: 0 10px;
+  }
   [id="menu-mobile-toggle"]:checked {
     ~ .header__menu-toggle::before {
       font-family: "Font Awesome 6 Free";
