@@ -1,8 +1,4 @@
-    <?php if (have_posts()) : 
-        while (have_posts()) :
-        the_post(); ?>
-        
-        <article class="populaire__article">
+<article class="populaire__article">
             <?php 
             /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
             if (has_post_thumbnail()) {
@@ -37,9 +33,4 @@
                     </div>
 
             </div>
-        </article>
-        
-        <?php endwhile; 
-        else : ?>
-            <p>Aucun article trouvé.</p>
-        <?php endif; ?>
+</article>
