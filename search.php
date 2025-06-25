@@ -39,13 +39,25 @@
                 <span class="post__date">
                     <i class="icon-calendar"></i>
                     <?php echo get_the_date('d F Y'); ?>
-                </span> - 
-                <?php if (has_category()) : ?>
-                    <span class="post__category">
-                        <i class="icon-tag"></i>
-                        <?php the_category(', '); ?>
-                    </span>
-                <?php endif; ?>
+                </span> 
+
+                <!-- Afficher catégorie-->
+                <?php
+                    $categories = get_the_category();
+                    $child_cats = [];
+
+                    foreach ( $categories as $cat ) {
+                        if ( $cat->category_parent != 0 ) {
+                            $child_cats[] = $cat->name;
+                        }
+                    }
+
+                    if ( !empty($child_cats) ) : ?>
+                        <div class="category__categories">
+                            <i class="fas fa-folder"></i>
+                            <?php echo implode(', ', $child_cats); ?>
+                        </div>
+            <?php endif; ?>
             </div>
 
             <!-- -->        
