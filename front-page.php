@@ -13,8 +13,9 @@
 
 
 <!-- Hero Galerie -->
-<section class="galerie">
-    <h2 class="galerie__titre">Nos destinations favorites</h2>
+ <section class="galerie">
+<?= get_template_part("gabarit/galerie"); ?>
+    <!-- <h2 class="galerie__titre">Nos destinations favorites</h2>
     <div class="galerie__grid">
         <div class="galerie__element">
             <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie1.jpg" alt="destination1" class="galerie__image">
@@ -46,13 +47,22 @@
         <div class="galerie__element">
             <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie10.jpg" alt="destination10" class="galerie__image">
         </div>
-    </div>
-</section>
+    </div> -->
+</section> 
 
 <!-- Section populaire -->
 <section class="populaire">
-<?php get_template_part ("gabarit/carte"); ?>
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <?php if (!in_category('galerie')) : ?>
+            <?php get_template_part("gabarit/carte"); ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php else : ?>
+    <p>Aucun article trouvé.</p>
+<?php endif; ?>
 </section>
+
 
 <!-- Footer -->
 <?php get_footer(); ?>

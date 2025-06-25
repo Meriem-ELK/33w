@@ -200,6 +200,30 @@ section {
   box-shadow: 0 4px 12px rgba(62, 191, 171, 0.3);
 }
 
+.fa-temperature-low {
+  color: #64b5f6;
+}
+
+.fa-temperature-high {
+  color: #f44336;
+}
+
+.fa-thermometer-half {
+  color: #ff9800;
+}
+
+.category__titre:hover {
+  color: #f07c00;
+}
+
+.post__meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .header {
   background-color: #f5f5f5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -402,7 +426,6 @@ section {
   padding: 40px 20px 20px;
 }
 .site-footer .footer-container {
-  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -493,11 +516,11 @@ section {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-  padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
 }
 .populaire__article:hover {
   transform: translateY(-5px);
@@ -505,20 +528,15 @@ section {
 }
 
 .populaire__image {
-  width: 150px;
+  width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: 8px;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.populaire__article:hover .populaire__image {
-  transform: scale(1.05);
 }
 
 .populaire__contenu {
   flex-basis: 100%;
+  padding: 1.5rem;
 }
 .populaire__contenu_titre {
   color: #00475b;
@@ -527,6 +545,44 @@ section {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   line-height: 1.3;
+}
+.populaire__contenu_temperature {
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #3ebfab;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+.populaire__contenu_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.populaire__contenu_info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #495057;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.populaire__contenu-note {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.populaire__contenu-note .fas {
+  color: #ffd700;
 }
 
 .populaire__contenu_titre:hover {
@@ -606,6 +662,7 @@ section {
   color: #f07c00;
   margin-top: auto;
   align-items: center;
+  font-size: 14px;
 }
 .category__categories .fas {
   padding-right: 5px;
