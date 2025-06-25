@@ -1,6 +1,6 @@
-# TP2 - Site de voyage
+# TP1 - Site de voyage
 
-### Deuxième étape du développement d'un thème WP
+### Première étape du développement d'un thème WP
 
 #### Auteur : Meriem El kouarir
 

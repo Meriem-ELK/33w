@@ -13,27 +13,55 @@
 
 
 <!-- Hero Galerie -->
-<section class="galerie">
-    <?= get_template_part("gabarit/galerie"); ?>
+ <section class="galerie">
+<?= get_template_part("gabarit/galerie"); ?>
+    <!-- <h2 class="galerie__titre">Nos destinations favorites</h2>
+    <div class="galerie__grid">
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie1.jpg" alt="destination1" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie2.jpg" alt="destination2" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie3.jpg" alt="destination3" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie4.jpg" alt="destination4" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie5.jpg" alt="destination5" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie6.jpg" alt="destination6" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie7.jpg" alt="destination7" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie8.jpg" alt="destination8" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie9.jpg" alt="destination9" class="galerie__image">
+        </div>
+        <div class="galerie__element">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/galerie/galerie10.jpg" alt="destination10" class="galerie__image">
+        </div>
+    </div> -->
 </section> 
 
 <!-- Section populaire -->
 <section class="populaire">
-
- <?php if (have_posts()) {
-      while (have_posts()) {
-        /* affiche l'image « mise en avant » miniature */
-        the_post();
-        if (!in_category('galerie')) :
-            get_template_part("gabarit/carte"); 
-        endif;
-      }
-    } ?>
-
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <?php if (!in_category('galerie')) : ?>
+            <?php get_template_part("gabarit/carte"); ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php else : ?>
+    <p>Aucun article trouvé.</p>
+<?php endif; ?>
 </section>
-
-
-
 
 
 <!-- Footer -->
