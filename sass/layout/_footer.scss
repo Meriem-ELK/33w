@@ -68,13 +68,13 @@
 
     h3 {
       color: $couleur-primaire;
-      margin-bottom: 15px;
     }
 
     .social-links {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+      font-size: 25px;
 
       a {
         color: $couleur-blanche;

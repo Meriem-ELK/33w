@@ -21,7 +21,7 @@
                 <a href="tel:5141234567">(514) 123-4567</a></p>
                 
                 <p><strong>Courriel :</strong><br>
-                <a href="mailto:info@monclub.com">info@monclub.com</a></p>
+                <a href="mailto:info@monclub.com">info@exclu-voyages.com</a></p>
             </div>
         </div>
         
@@ -66,6 +66,7 @@
                     <div class="social-links">
                         <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Meriem-ELK/33w" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
 

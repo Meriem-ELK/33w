@@ -1,17 +1,22 @@
 <?php
 /*
 *Template-part Hero.php
-* Permet d'afficher la section hero
+* Permet d'afficher la section hero  !
 */
+
+$hero_title = get_theme_mod('hero_title', '');
+$hero_auteur = get_theme_mod('hero_auteur', '');
+
 ?>
 
        <div class="hero__contenu">
-            <h1 class="hero__titre">Voyagez Autrement avec Exclu Voyages !</h1>
+            <h1 class="hero__titre"><?= $hero_title ?></h1>
             <div class="hero__description">
                 <p class="hero__texte">Découvrez des destinations uniques et inoubliables avec Exclu Voyages.</p>
                 <p class="hero__texte">Nous vous offrons des expériences authentiques, des paysages à couper le souffle et des aventures sur mesure. Partez à la découverte du monde avec nous et créez des souvenirs impérissables.</p>
             </div>
             <div class="hero__contact">
+                <p class="hero__contact-info">Auteur du thème : <?= $hero_auteur ?></p>
                 <p class="hero__contact-info">info@cmaisonneuve.qc.ca</p>
                 <p class="hero__contact-info">3800, rue Sherbrooke, Montréal</p>
                 <p class="hero__contact-info">514-254-7131</p>
@@ -19,6 +24,7 @@
                 <div class="hero__social">
                     <a href="#" class="hero__social-lien"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="hero__social-lien"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/Meriem-ELK/33w" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
