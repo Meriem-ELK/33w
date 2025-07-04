@@ -280,9 +280,20 @@ section {
   padding: 0.5rem 0.2rem;
   transition: color 0.3s ease;
   color: #00475b;
+  position: relative;
+}
+.header__menu-element:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3ebfab;
+  transition: 0.3s ease;
 }
 .header__menu-element:hover {
-  color: #3ebfab;
+  color: #f07c00;
 }
 .header__menu-lien {
   font-size: 0.9rem;
@@ -333,6 +344,10 @@ section {
     transform: translateY(-50%);
     cursor: pointer;
   }
+}
+.header .current-menu-item a {
+  text-decoration: underline;
+  color: #f07c00;
 }
 
 .hero {

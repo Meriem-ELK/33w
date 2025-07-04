@@ -2,7 +2,7 @@
             <?php 
             /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
             if (has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail', array('class' => 'populaire__image'));
+                the_post_thumbnail('medium', array('class' => 'populaire__image'));
             }
             ?>
             

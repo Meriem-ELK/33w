@@ -4,6 +4,8 @@
 * Permet d'afficher la section hero  !
 */
 
+$hero_couleur = get_theme_mod ('hero_couleur');
+
 $hero_title = get_theme_mod('hero_title', '');
 $hero_auteur = get_theme_mod('hero_auteur', '');
 
@@ -17,6 +19,14 @@ $hero_cta_text = get_theme_mod('hero_cta_text', 'INSCRIPTION');
 $hero_cta_link = get_theme_mod('hero_cta_link', '#');
 
 ?>
+
+<style>
+.hero__contenu{
+  color: <?= $hero_couleur ?> !important;
+}
+
+</style>
+
 
        <div class="hero__contenu">
             <h1 class="hero__titre"><?= $hero_title ?></h1>
@@ -37,7 +47,9 @@ $hero_cta_link = get_theme_mod('hero_cta_link', '#');
                 </div>
             </div>
         </div>
-<!-- Formulaire inscription -->
+
+
+        <!-- Formulaire inscription -->
         <form class="form-inscription" action="">
             <div class="form-inscription__label-input">
               <label class="inscription__label" for="nom">Nom</label>
