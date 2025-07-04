@@ -41,9 +41,9 @@ $hero_cta_link = get_theme_mod('hero_cta_link', '#');
                 <p class="hero__contact-info"><?= $hero_telephone ?></p>
                 <a href="<?= $hero_cta_link ?>" class="hero__inscrire-btn"><?= $hero_cta_text ?></a>
                 <div class="hero__social">
-                    <a href="#" class="hero__social-lien"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="hero__social-lien"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/Meriem-ELK/33w" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
+                  <div class="social-links">
+                    <?php icone_sociaux ()?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<article class="populaire__article">
+
             <?php 
             /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
             if (has_post_thumbnail()) {
@@ -33,5 +33,5 @@
                     </div>
 
             </div>
-        </article>
+  
         

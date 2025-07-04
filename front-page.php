@@ -25,7 +25,9 @@
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <?php if (!in_category('galerie')) : ?>
-            <?php get_template_part("gabarit/carte"); ?>
+            <article class="populaire__article">
+                    <?php get_template_part("gabarit/carte"); ?>
+            </article>
         <?php endif; ?>
     <?php endwhile; ?>
 <?php else : ?>
