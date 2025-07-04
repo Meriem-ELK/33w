@@ -1,26 +1,35 @@
 <?php
 /*
-*Template-part Hero.php
+* Template-part Hero.php
 * Permet d'afficher la section hero  !
 */
 
 $hero_title = get_theme_mod('hero_title', '');
 $hero_auteur = get_theme_mod('hero_auteur', '');
 
+$hero_email = get_theme_mod('hero_email', '');
+$hero_adresse = get_theme_mod('hero_adresse', '');
+$hero_telephone = get_theme_mod('hero_telephone', '');
+
+$hero_subtitle = get_theme_mod('hero_subtitle', 'Découvrez des destinations uniques et inoubliables avec Exclu Voyages.');
+
+$hero_cta_text = get_theme_mod('hero_cta_text', 'INSCRIPTION');
+$hero_cta_link = get_theme_mod('hero_cta_link', '#');
+
 ?>
 
        <div class="hero__contenu">
             <h1 class="hero__titre"><?= $hero_title ?></h1>
             <div class="hero__description">
-                <p class="hero__texte">Découvrez des destinations uniques et inoubliables avec Exclu Voyages.</p>
+                <p class="hero__texte"><?= $hero_subtitle ?></p>
                 <p class="hero__texte">Nous vous offrons des expériences authentiques, des paysages à couper le souffle et des aventures sur mesure. Partez à la découverte du monde avec nous et créez des souvenirs impérissables.</p>
             </div>
             <div class="hero__contact">
                 <p class="hero__contact-info">Auteur du thème : <?= $hero_auteur ?></p>
-                <p class="hero__contact-info">info@cmaisonneuve.qc.ca</p>
-                <p class="hero__contact-info">3800, rue Sherbrooke, Montréal</p>
-                <p class="hero__contact-info">514-254-7131</p>
-                <a href="#" class="hero__inscrire-btn">S'INSCRIRE</a>
+                <p class="hero__contact-info"><?= $hero_email ?></p>
+                <p class="hero__contact-info"><?= $hero_adresse ?></p>
+                <p class="hero__contact-info"><?= $hero_telephone ?></p>
+                <a href="<?= $hero_cta_link ?>" class="hero__inscrire-btn"><?= $hero_cta_text ?></a>
                 <div class="hero__social">
                     <a href="#" class="hero__social-lien"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="hero__social-lien"><i class="fab fa-instagram"></i></a>
