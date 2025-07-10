@@ -11,7 +11,6 @@
       border: 1px solid $couleur-gris;
       border-radius: 4px;
       background-color: $couleur-blanche;
-      width: 100%;
       max-width:250px;
 
         &:hover .fas{ color: $couleur-primaire;}
@@ -30,10 +29,110 @@
       outline: none;
       font-size: 0.9rem;
       background: transparent;
-      min-width: 0;
 
         &::placeholder {
           color: $couleur-gris-fonce;
         }
     }
   }
+
+  /**/
+
+  /* Statistiques de recherche */
+.recherche__stats {
+  background-color: #f8f9fa;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border-radius: 8px;
+  border-left: 4px solid #3ebfab;
+  border-right: 4px solid #3ebfab;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    & p {
+      margin: 0;
+      font-size: 1rem;
+      color: #495057;
+      font-family: "Poppins", sans-serif;
+      line-height: 1.4;
+    }
+}
+
+
+
+.recherche__count {
+  font-weight: 600;
+  color: #00475b;
+  font-size: 1.1rem;
+}
+
+.recherche__terme {
+  color: #f07c00;
+  font-weight: 600;
+  font-style: italic;
+  background-color: rgba(240, 124, 0, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Animation d'apparition */
+.recherche__stats {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .recherche__stats {
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    border-radius: 6px;
+  }
+  
+  .recherche__stats p {
+    font-size: 0.9rem;
+  }
+  
+  .recherche__count {
+    font-size: 1rem;
+  }
+}
+
+/* Variante avec icône (optionnelle) */
+.recherche__stats--avec-icone {
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.recherche__stats--avec-icone::before {
+  content: "\f002"; /* Icône FontAwesome search */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3ebfab;
+  font-size: 1.2rem;
+}
+
+/* Si aucun résultat trouvé */
+.recherche__stats--vide {
+  border-left-color: #f07c00;
+  background-color: #fff8f0;
+}
+
+.recherche__stats--vide .recherche__count {
+  color: #f07c00;
+}

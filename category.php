@@ -6,50 +6,30 @@
 ?>
 <?php get_header() ?>
 <section class="category">
-    <?php if (have_posts()) {
-        while (have_posts()) {
-            the_post();
-    ?>
-<div class="category__contenu">
-            
-        <?php if (has_post_thumbnail()) : ?>
-        <a href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail('medium', array('class' => 'category__image')); ?>
-        </a>
-        <?php endif; ?>
-
-          
-    <div class="category__details">
-            <h2 class="category__titre">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </h2>
-            <!-- Affiche le contenu complet de l'article -->
-            <?php the_content(); ?>
-
-            <!-- Afficher catégorie-->
-            <?php
-                    $categories = get_the_category();
-                    $child_cats = [];
-
-                    foreach ( $categories as $cat ) {
-                        if ( $cat->category_parent != 0 ) {
-                            $child_cats[] = $cat->name;
-                        }
-                    }
-
-                    if ( !empty($child_cats) ) : ?>
-                        <div class="category__categories">
-                            <i class="fas fa-folder"></i>
-                            <?php echo implode(', ', $child_cats); ?>
-                        </div>
-            <?php endif; ?>
-
+    <div>
+        <h2><?php echo single_cat_title(); ?></h2>
+        <?php echo category_description(); ?>
     </div>
+
+    <div class="category__content">
+        <?php if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+            ?>
+                <div class="category__details">
+                    <!-- Appel composant carte -->
+                    <?php carte ()?>
+                </div>
+             <?php
+                }
+            } else {
+        // Aucun post trouvé
+        echo '<div class="aucun_post"><p>Aucun article pour cette catégorie.</p></div>';
+    }
+    ?>
+    </div>
+    
 </div>
-    <?php
-        }
-    } ?>
 </section>
+
 <?php get_footer(); ?>

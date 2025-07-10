@@ -41,7 +41,7 @@
                     <i class="icon-calendar"></i>
                     <?php echo get_the_date('d F Y'); ?>
                 </span>
-                
+
                 <!-- Afficher catégorie-->
                 <?php
                     $categories = get_the_category();
@@ -59,6 +59,27 @@
                             <?php echo implode(', ', $child_cats); ?>
                         </div>
             <?php endif; ?>
+            </div>
+
+            <div class="populaire__contenu-boxInfo">
+                <div class="populaire__contenu-note">
+                    Satisfaction client - Note  : <?php the_field('appreciation'); ?><i class="fas fa-star"></i>
+                </div>
+                <!-- Informations température -->
+                <div class="populaire__contenu_carte">
+                        <div class="populaire__contenu_carte-min">
+                            <div class="populaire__contenu_carte-label">Température Minimale</div>
+                            <div class="populaire__contenu_carte-nombre"><?php the_field('temperature_minimum'); ?>°C</div>
+                        </div>
+                        <div class="populaire__contenu_carte-max">
+                            <div class="populaire__contenu_carte-label">Température Maximale</div>
+                            <div class="populaire__contenu_carte-nombre"><?php the_field('temperature_maximum'); ?>°C</div>
+                        </div>
+                        <div class="populaire__contenu_carte-moy">
+                            <div class="populaire__contenu_carte-label">Température Moyenne</div>
+                            <div class="populaire__contenu_carte-nombre"><?php the_field('temperature_moyenne'); ?>°C</div>
+                        </div>
+                </div>
             </div>
 
             <!-- -->        
@@ -80,13 +101,7 @@
             <div class="post__share">
                 <h3>Partager cet article</h3>
                 <div class="share-buttons">
-                    <a href="#" target="_blank" class="share-btn facebook">
-                       <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="share-btn twitter">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    
+                   <?php icone_sociaux ()?> 
                 </div>
             </div>
 

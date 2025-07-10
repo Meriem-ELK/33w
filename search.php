@@ -1,79 +1,49 @@
 <?php
-
 /**
  * le modèle index
  * Représente le modèle par défaut
  */
-
 ?>
 
-<?php get_header() ?>
-<div class="post">
-<?php if (have_posts()) : 
-    while (have_posts()) :
-    the_post(); 
-    ?>  
+<?php get_header(); ?>
 
-    <article class="post__contenu">
-
-        <div class="post__details">
-            <!-- -->            
-            <div class="post__image">
-                <?php
-                    /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
-                    if (has_post_thumbnail()) {
-                        the_post_thumbnail('medium', array('class' => 'category__image'));
-                }?>
-            </div>
-
-            <!-- -->    
-            <h2>
-                <?php 
-                /* Affiche le titre principal du `post`*/ 
-                the_title(); ?>
-            </h2>
-
-            <!-- --> 
-            <div class="post__meta"> 
+<?php if ( is_search() ) : ?>
+    <?php
+    global $wp_query;
+    $count = $wp_query->found_posts;
+    $search_term = get_search_query();
+    $classe_vide = ($count == 0) ? ' recherche__stats--vide' : '';
+    ?>
     
-                <span class="post__date">
-                    <i class="icon-calendar"></i>
-                    <?php echo get_the_date('d F Y'); ?>
-                </span> 
-
-                <!-- Afficher catégorie-->
+    <div class="recherche__stats<?php echo $classe_vide; ?>">
+        <p>
+            <span class="recherche__count">
                 <?php
-                    $categories = get_the_category();
-                    $child_cats = [];
+                if ($count == 0) {
+                    echo 'Aucun résultat trouvé';
+                } else {
+                    echo $count . ' résultat' . ($count > 1 ? 's' : '') . ' trouvé' . ($count > 1 ? 's' : '');
+                }
+                ?>
+            </span>
+            pour
+            <span class="recherche__terme">
+                "<?php echo esc_html($search_term); ?>"
+            </span>
+        </p>
+    </div>
+<?php endif; ?>
 
-                    foreach ( $categories as $cat ) {
-                        if ( $cat->category_parent != 0 ) {
-                            $child_cats[] = $cat->name;
-                        }
-                    }
-
-                    if ( !empty($child_cats) ) : ?>
-                        <div class="category__categories">
-                            <i class="fas fa-folder"></i>
-                            <?php echo implode(', ', $child_cats); ?>
-                        </div>
-            <?php endif; ?>
-            </div>
-
-            <!-- -->        
-            <div>
-                <?php 
-                /* Cette fonction permet d'afficher l'ensemblre du contenu du post (article ou page) */
-                the_content(); ?>
-            </div>
-
+<section class="category">
+        <div class="category__content">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>      
+                <div class="category__details">
+                    <!-- Appel composant carte -->
+                    <?php carte ()?>
+                </div>
+            <?php endwhile; endif; ?>
         </div>
-         
-    </article>
-
-    <?php endwhile; endif; ?>
- 
-</div>
+</section>
 
 
-<?php get_footer();
+<?php get_footer(); ?>

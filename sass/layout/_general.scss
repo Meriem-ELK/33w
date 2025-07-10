@@ -99,6 +99,13 @@ section {
   }
 }
 
+
+.aucun_post{
+    background-color: #fff8f0; 
+    padding: 15px;
+    border: 1px solid #f07c00;
+}
+
 /* ------------- Page 404 */
 
 .error-page {
@@ -179,17 +186,6 @@ section {
   }
 }
 
-.fa-temperature-low {
-  color: #64b5f6;
-}
-
-.fa-temperature-high {
-  color: #f44336;
-}
-
-.fa-thermometer-half {
-  color: #ff9800;
-}
 
 .category__titre:hover {
   color: $couleur-accent;
@@ -203,4 +199,44 @@ section {
   margin-bottom: 10px;
 }
 
+/**/
+.populaire__contenu_carte {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 15px 0px 25px 0px;
+    min-width: 100%;
+      & >div {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 10px;
+          border-radius: 10px;
+          text-align: center;
+          position: relative;
+          overflow: hidden; 
+      }
 
+      .populaire__contenu_carte-min {
+        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      }
+
+      .populaire__contenu_carte-max {
+        background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+      }
+
+      .populaire__contenu_carte-moy {
+        background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+      }
+}
+
+.populaire__contenu_carte-label {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.populaire__contenu_carte-nombre {
+  font-size: 20px;
+  font-weight: bold;
+}
+        
