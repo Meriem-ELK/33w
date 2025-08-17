@@ -9,9 +9,9 @@
 function icone_sociaux()
 {
 ?>
-    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="#" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/Meriem-ELK/33w/tree/tp2" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
 <?php
 }
 
@@ -87,4 +87,20 @@ function carte($post_id = null) {
         </div>
     <?php
     wp_reset_postdata();
+}
+
+function extraire_list_categories($nom_categorie)
+{
+    //$parent_category_id = get_term_by("slug", $nom_categorie, "category");
+    $parent_category = get_category_by_slug($nom_categorie);
+    $tableau = array(
+        'parent' => $parent_category->term_id,
+        'hide_empty' => true
+    );
+    $list_categories = get_categories($tableau);
+    echo "<ul class='list_categories'>";
+    foreach ($list_categories as $categorie) {
+        echo "<li data-id='" . $categorie->term_id . "'>" . $categorie->name . "</li>";
+    }
+    echo "</ul>";
 }

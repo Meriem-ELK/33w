@@ -100,3 +100,4 @@ $footer_copyright_text = get_theme_mod('footer_copyright_text', '');
         <p>&copy; <?php echo date('Y'); ?> <?= $footer_site_nom ?> - <?= $footer_copyright_text ?></p>
     </div>
 </footer>
+<?php wp_footer(); ?>

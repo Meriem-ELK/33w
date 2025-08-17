@@ -9,7 +9,7 @@ $hero_background = get_theme_mod('hero_background', '');
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero" style="background-image: url('<?= $hero_background ?>');">
+<section class="hero">
     <?php get_template_part ("gabarit/hero"); ?>
 </section>
 
@@ -35,6 +35,28 @@ $hero_background = get_theme_mod('hero_background', '');
         <?php endif; ?>
 
 </section>
+
+<!-- section rest-api avec accordéon -->
+<section class="destination">
+    <div class="destination__container">
+        <h2 class="destination__titre">Destinations par catégorie</h2>
+        
+        <!-- Liste des catégories (boutons de l'accordéon) -->
+        <div class="destination__categories">
+            <?php extraire_list_categories("destination"); ?>
+        </div>
+        
+        <!-- Accordéon pour afficher les articles -->
+        <div class="destination__accordion">
+            <div class="destination__accordion-content">
+                <div class="destination__list">
+                    <!-- Le contenu sera chargé dynamiquement par JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 <!-- Footer -->
