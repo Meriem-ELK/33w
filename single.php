@@ -45,6 +45,7 @@
                     <?php echo get_the_date('d F Y'); ?>
                 </span>
 
+              
                 <!-- Afficher catégorie-->
                 <?php
                     $categories = get_the_category();
@@ -90,6 +91,12 @@
                 <?php 
                 /* Cette fonction permet d'afficher l'ensemblre du contenu du post (article ou page) */
                 the_content(); ?>
+            </div>
+
+            <!-- Afficher l'auteur -->
+            <div class="post__author">
+                    <i class="fas fa-user"></i>
+                    Écrit par <?php the_author(); ?>
             </div>
 
         </div>

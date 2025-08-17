@@ -217,6 +217,12 @@
   font-size: 25px;
 }
 
+.post__author{
+  font-size: 0.9rem;
+  color:#f07c00;
+  margin: 10px 0px;
+}
+
 /* Version responsive pour mobile */
 @media (max-width: 600px) {
   .populaire {

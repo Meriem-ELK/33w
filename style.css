@@ -862,6 +862,12 @@ section {
   font-size: 25px;
 }
 
+.post__author {
+  font-size: 0.9rem;
+  color: #f07c00;
+  margin: 10px 0px;
+}
+
 /* Version responsive pour mobile */
 @media (max-width: 600px) {
   .populaire {
@@ -1053,19 +1059,12 @@ section {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .destination__titre {
-    font-size: 1.5rem;
     letter-spacing: 1px;
     margin-bottom: 2rem;
-  }
-  .destination__titre::before {
-    display: none;
   }
   .destination__categories {
     gap: 0.8rem;
     margin-bottom: 2rem;
-  }
-  .list_categories {
-    gap: 0.8rem;
   }
   .list_categories li {
     padding: 0.8rem 1.5rem;
@@ -1075,18 +1074,6 @@ section {
   }
 }
 @media (max-width: 480px) {
-  .destination__titre {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-  }
-  .destination__titre::after {
-    width: 60px;
-    height: 3px;
-    bottom: -10px;
-  }
-  .list_categories {
-    justify-content: center;
-  }
   .list_categories li {
     padding: 0.7rem 1.2rem;
     font-size: 0.8rem;
