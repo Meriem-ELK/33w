@@ -48,9 +48,14 @@ function carte($post_id = null) {
     ?>
 
         <?php 
-        if (has_post_thumbnail()) {
-            the_post_thumbnail('medium', array('class' => 'populaire__image'));
-        }
+        
+        /* Affiche l'image "mise en avant" miniature */         
+            if (has_post_thumbnail()) {
+                    the_post_thumbnail('medium', array('class' => 'populaire__image'));
+            } else {
+                // Affiche une image par défaut
+                echo '<img src="' . get_template_directory_uri() . '/images/default.jpg" class="populaire__image" alt="Image par défaut">';
+            }
         ?>
         
         <div class="populaire__contenu">

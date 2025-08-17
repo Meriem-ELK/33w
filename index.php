@@ -21,12 +21,18 @@
             <!-- -->            
             <div class="post__image">
                 <?php
-                    /* Affiche l'image "mise en avant" miniature (150px x150px) */ 
-                    if (has_post_thumbnail()) {
+                    
+                /* Affiche l'image "mise en avant" miniature */ 
+                if (has_post_thumbnail()) {
                         the_post_thumbnail('medium', array('class' => 'category__image'));
-                }?>
+                } else {
+                    // Affiche une image par défaut
+                    echo '<img src="' . get_template_directory_uri() . '/images/default.jpg" class="category__image" alt="Image par défaut">';
+                }
+                
+                ?>
             </div>
-
+            
             <!-- -->    
             <h2>
                 <?php 
