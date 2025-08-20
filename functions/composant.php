@@ -79,14 +79,34 @@ function carte($post_id = null) {
                         </div>
               </div>
 
-              <div class="populaire__contenu-note">
+            <div class="populaire__contenu-note">
                 Satisfaction client - Note : <?php the_field('appreciation'); ?> <i class="fas fa-star"></i>
-             </div>
+            </div>
 
-              <?php 
+            <?php 
+                // Récupérer toutes les catégories de l'article courant
+                $categories = get_the_category();
+
+                if (!empty($categories)) {
+                    echo '<div class="populaire__categorie">';
+                    echo '<i class="fas fa-folder"></i>';
+                    
+                    foreach ($categories as $categorie) {
+                        // Exclure la catégorie "Populaire" (par slug ou par nom)
+                        if ($categorie->slug !== 'populaire' && $categorie->name !== 'Populaire') {
+                            echo '<a href="' . get_category_link($categorie->term_id) . '">' . $categorie->name . '</a>';
+                        }
+                    }
+                    
+                    echo '</ul>';
+                    echo '</div>';
+                }
+                
+                $points = "...";
                 $lien = "<a href='" . get_permalink() . "' class='populaire__lien'>Lire la suite <i class='fas fa-arrow-right'></i></a>";
-                echo wp_trim_words(get_the_excerpt(), 15, $lien);
-              ?>
+                echo wp_trim_words(get_the_excerpt(), 15, $points) . ' ' . $lien;
+            ?>
+              
           </div>
         </div>
     <?php

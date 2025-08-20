@@ -946,9 +946,13 @@ section {
 
 .populaire__categorie {
   color: #f07c00;
-  padding-bottom: 10px;
-  display: block;
-  text-transform: uppercase;
+  padding: 10px 0px;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+}
+.populaire__categorie a:hover {
+  text-decoration: underline;
 }
 
 /* Version responsive pour mobile */
