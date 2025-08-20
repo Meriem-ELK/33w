@@ -199,7 +199,7 @@ for ($i = 0; $i < 5; $i++) {
      // ================================================
     // TITRES DES SECTIONS
     // ================================================
-    
+
     // Titre section Contact
     $wp_customize->add_setting('footer_contact_titre', array(
             'default' => __('', 'theme_31w'),
@@ -259,6 +259,36 @@ for ($i = 0; $i < 5; $i++) {
         'section' => 'footer_section',
         'type' => 'text',
     ));
+
+/* ================================================ Image de destination dans le footer */
+
+    // Titre/texte pour accompagner l'image de destination
+        $wp_customize->add_setting('footer_destination_titre', array(
+            'default' => __('Destination du moment', 'theme_31w'),
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
+
+        $wp_customize->add_control('footer_destination_titre', array(
+            'label' => __('Titre section destination', 'theme_31w'),
+            'section' => 'footer_section',
+            'type' => 'text',
+        ));
+
+    // Configuration du champ image de destination
+        $wp_customize->add_setting('footer_destination_image', array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw'
+        ));
+
+        // Configuration du contrôleur image
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_destination_image', array(
+            'label' => __('Image de destination (Footer)', 'theme_31w'),
+            'section' => 'footer_section',
+            'description' => __('Sélectionnez une image de destination à afficher dans le footer', 'theme_31w'),
+        )));
+
+
+
 
     // ================================================
     // INFORMATIONS DE CONTACT

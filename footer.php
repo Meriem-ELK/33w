@@ -20,10 +20,14 @@ $footer_navigation_titre = get_theme_mod('footer_navigation_titre', '');
 
 
 $footer_search_titre = get_theme_mod('footer_search_titre', '');
-$footer_social_titre = get_theme_mod('footer_search_titre', '');
+$footer_social_titre = get_theme_mod('footer_social_titre', '');
 
 $footer_site_nom = get_theme_mod('footer_site_nom', '');
 $footer_copyright_text = get_theme_mod('footer_copyright_text', '');
+
+
+$footer_destination_titre = get_theme_mod('footer_destination_titre', '');
+$footer_destination_image = get_theme_mod('footer_destination_image', '');
 
 ?>
 
@@ -62,6 +66,8 @@ $footer_copyright_text = get_theme_mod('footer_copyright_text', '');
             ?>
         </div>
 
+       
+
         <!-- Menu principal -->
         <div class="footer-section">
             <h3><?= $footer_navigation_titre ?></h3>
@@ -76,6 +82,28 @@ $footer_copyright_text = get_theme_mod('footer_copyright_text', '');
 
 
         <div>
+            <!-- Nouvelle section: Image de destination -->
+            <div class="footer-section footer-destination">
+                <h3><?= $footer_destination_titre ?></h3>
+                <div class="destination-showcase">
+                    <img src="<?= esc_url($footer_destination_image) ?>"  alt="" class="footer-destination-image">
+                </div>
+            </div>
+
+            
+        </div>
+       
+    </div>
+
+
+    <div class="footer-container-secondaire">
+            <!-- Réseaux sociaux -->
+            <div class="social-section">
+                 <h3><?= $footer_social_titre?></h3>
+                <div class="social-links">
+                    <?php icone_sociaux ()?>
+                </div>
+            </div>
 
             <!-- Zone de recherche -->
             <div class="footer-recherche">
@@ -83,17 +111,8 @@ $footer_copyright_text = get_theme_mod('footer_copyright_text', '');
                 <?php get_search_form(); ?>
             </div>
 
-            <!-- Réseaux sociaux -->
-            <div class="social-section">
-                <h3><?= $footer_social_titre ?></h3>
-                <div class="social-links">
-                    <?php icone_sociaux ()?>
-                </div>
-            </div>
-        </div>
-       
+            
     </div>
-
 
     <!-- Copyright -->   
     <div class="footer-bottom">
