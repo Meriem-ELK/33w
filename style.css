@@ -443,13 +443,6 @@ section {
 
 .hero {
   position: relative;
-  height: 80vh;
-  min-height: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-position: center;
-  background-size: cover;
 }
 .hero__contenu {
   padding: 2rem;
@@ -461,6 +454,16 @@ section {
   border-radius: 8px;
   backdrop-filter: blur(5px);
   max-width: 800px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translate(10%, -40%);
+  z-index: 2;
+}
+.hero__carrousel {
+  position: relative;
+  z-index: 1;
+  min-height: 800px;
 }
 .hero__description {
   max-width: 580px;
@@ -498,6 +501,66 @@ section {
 }
 .hero__social-lien:hover {
   color: #3ebfab;
+}
+
+/* Navigation du carrousel */
+.carrousel__navigation {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+}
+
+/* Radio boutons cachés */
+.carrousel__radio {
+  display: none;
+}
+
+/* Labels des radio boutons (points de navigation) */
+.carrousel__label {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid black;
+}
+
+.carrousel__label:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+/* Style actif pour le point sélectionné */
+.carrousel__radio:checked + .carrousel__label {
+  background-color: black;
+  transform: scale(1.3);
+  border: 1px solid white;
+}
+
+/* Chaque slide du carrousel */
+.carrousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Image du carrousel */
+.carrousel__image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  object-position: center;
 }
 
 .galerie {
@@ -868,6 +931,13 @@ section {
   margin: 10px 0px;
 }
 
+.populaire__categorie {
+  color: #f07c00;
+  padding-bottom: 10px;
+  display: block;
+  text-transform: uppercase;
+}
+
 /* Version responsive pour mobile */
 @media (max-width: 600px) {
   .populaire {
@@ -940,7 +1010,6 @@ section {
   padding: 1.2rem 1.5rem;
   margin: 0;
   color: #00475b;
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   position: relative;
 }
@@ -984,6 +1053,16 @@ section {
   display: none;
 }
 
+.accordeon__chk:checked ~ label {
+  background: linear-gradient(135deg, #3ebfab 0%, #2a9688 100%);
+  border-color: #3ebfab;
+}
+
+.accordeon__chk:checked ~ label h3,
+.accordeon__chk:checked ~ label h3:after {
+  color: #ffffff;
+}
+
 .accordeon__chk:checked ~ .accordeon__excerpt {
   max-height: 500px;
   padding: 1.5rem;
@@ -991,6 +1070,11 @@ section {
 
 .accordeon__chk:checked ~ .accordeon h3::after {
   content: "−";
+}
+
+.accordeon__btn {
+  display: flex;
+  justify-content: end;
 }
 
 /* Liste des catégories */
@@ -1215,7 +1299,7 @@ section {
   border: solid 1px #aaa;
   box-shadow: 0 5px 10px 0 #aaa;
   position: absolute;
-  bottom: -2%;
+  bottom: -6%;
   left: 50%;
   transform: translateX(-50%);
 }

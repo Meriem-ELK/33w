@@ -223,6 +223,13 @@
   margin: 10px 0px;
 }
 
+.populaire__categorie{ 
+  color:#f07c00;
+  padding-bottom: 10px;
+  display: block;
+  text-transform: uppercase;
+}
+
 /* Version responsive pour mobile */
 @media (max-width: 600px) {
   .populaire {

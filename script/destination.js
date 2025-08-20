@@ -37,7 +37,7 @@
           </label>  
                   
           <div class="accordeon__excerpt">${article.excerpt.rendered}
-            <a href="${article.link}">Lire plus</a>
+            <div class="accordeon__btn"><a href="${article.link}">Afficher la suite</a></div>
           </div>
           `;
           destinationList.appendChild(articleElement);

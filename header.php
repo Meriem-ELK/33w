@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="<?php home_url(); ?>">
     <meta name="description" content="Prototype de la page d'accueil" />
     <meta name="author" content="Meriem El kouarir" />
+    <base href="<?php echo home_url(); ?>">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

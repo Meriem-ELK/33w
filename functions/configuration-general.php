@@ -50,6 +50,17 @@ function theme_tp_enqueue_styles()
         filemtime($script_path),
         true  // chargement dans le footer
     );
+
+    $script_path2 = get_template_directory() . '/script/carrousel-hero.js';
+    $script_url2  = get_template_directory_uri() . '/script/carrousel-hero.js';
+
+    wp_enqueue_script(
+        'carrousel-hero',
+        $script_url2,
+        array(),
+        filemtime($script_path2),
+        true  // chargement dans le footer
+    );
 }
 
 add_action('wp_enqueue_scripts', 'theme_tp_enqueue_styles');
@@ -71,3 +82,4 @@ function modifie_requete_principal($query)
     }
 }
 add_action('pre_get_posts', 'modifie_requete_principal');
+

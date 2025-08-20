@@ -1,71 +1,136 @@
 // Styles de la section hero
 .hero {
-  position: relative;
-  height: 80vh;
-  min-height: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-position: center;
-  background-size: cover;
+  position: relative; 
+    &__contenu {
+      padding: 2rem;
+      color: $couleur-noir;
+      max-width: 100%;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+      max-width: 800px;
+      position: absolute; 
+      top: 40%;  
+      left: 0; 
+      transform: translate(10%, -40%);
+      z-index: 2;    
+    }
 
-  &__contenu {
-    padding: 2rem;
-    color: $couleur-noir;
-    max-width: 100%;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    max-width: 800px;
-  }
+     &__carrousel {
+      position: relative;
+      z-index: 1;
+      min-height: 800px; 
+    }
+    &__description {
+      max-width: 580px;
+      margin-bottom: 1rem;
+    }
 
-  &__description {
-    max-width: 580px;
-    margin-bottom: 1rem;
-  }
-
-  &__texte {
-    margin-bottom: 0.5rem;
-  }
-
-  &__contact {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-
-    &-info {
+    &__texte {
       margin-bottom: 0.5rem;
     }
-  }
 
-  &__inscrire-btn {
-    padding: 0.75rem 1.5rem;
-    background-color: $couleur-secondaire;
-    color: $couleur-blanche;
-    font-weight: 600;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    max-width: fit-content;
+    &__contact {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
 
-    &:hover {
-      background-color: $couleur-primaire;
-    }
-  }
-
-  &__social {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 30px;
-
-    &-lien {
-      &:hover {
-        color: $couleur-primaire;
+      &-info {
+        margin-bottom: 0.5rem;
       }
     }
-  }
 
+    &__inscrire-btn {
+      padding: 0.75rem 1.5rem;
+      background-color: $couleur-secondaire;
+      color: $couleur-blanche;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      max-width: fit-content;
+
+      &:hover {
+        background-color: $couleur-primaire;
+      }
+    }
+
+    &__social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 30px;
+
+      &-lien {
+        &:hover {
+          color: $couleur-primaire;
+        }
+      }
+    }
+
+}
+
+
+/* Navigation du carrousel */
+.carrousel__navigation {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+/* Radio boutons cachés */
+.carrousel__radio {
+    display: none;
+}
+
+/* Labels des radio boutons (points de navigation) */
+.carrousel__label {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border:1px solid black
+}
+
+.carrousel__label:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+    
+}
+
+/* Style actif pour le point sélectionné */
+.carrousel__radio:checked + .carrousel__label {
+    background-color:black;
+    transform: scale(1.3);
+    border:1px solid white
+}
+
+
+/* Chaque slide du carrousel */
+.carrousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Image du carrousel */
+.carrousel__image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+    object-position: center;
 }

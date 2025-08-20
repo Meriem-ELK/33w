@@ -9,9 +9,9 @@ $hero_background = get_theme_mod('hero_background', '');
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero">
-    <?php get_template_part ("gabarit/hero"); ?>
-</section>
+<div class="hero">
+    <?php get_template_part('gabarit/carrousel');?>
+</div>
 
 
 <!-- Hero Galerie -->
@@ -26,7 +26,7 @@ $hero_background = get_theme_mod('hero_background', '');
                 <?php if (!in_category('galerie')) : ?>
                     <article class="populaire__article">
                         <!-- Appel composant carte -->
-                        <?php carte ()?>
+                        <?php carte(); ?>
                     </article>
                 <?php endif; ?>
             <?php endwhile; ?>

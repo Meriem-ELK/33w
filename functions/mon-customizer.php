@@ -6,8 +6,6 @@
 
 function theme_31w_customize_register($wp_customize) 
 {
-    // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
-
     // Section hero 
     $wp_customize->add_section('hero_section', array(
     'title' => __('Section Hero - Accueil', 'theme_31w'),
@@ -131,6 +129,45 @@ function theme_31w_customize_register($wp_customize)
                 'type' => 'text',
             )); 
 
+    // ================================================
+    // CARROUSEL
+    // ================================================
+
+/* ================================================  Nombre d'images du carrousel */ 
+$wp_customize->add_setting('hero_carrousel_count', array(
+    'default' => 3,
+    'sanitize_callback' => 'absint',
+));
+
+$wp_customize->add_control('hero_carrousel_count', array(
+    'label' => __('Nombre d\'images dans le carrousel', 'theme_31w'),
+    'section' => 'hero_section',
+    'type' => 'number',
+    'input_attrs' => array(
+        'min' => 1,
+        'max' => 5,
+        'step' => 1,
+    ),
+));
+
+/* ================================================  Génération dynamique des champs d'images */ 
+// Boucle pour créer dynamiquement 5 champs d'images maximum
+for ($i = 0; $i < 5; $i++) {
+    // Configuration du champ image
+    $wp_customize->add_setting("hero_background_$i", array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    // Configuration du contrôleur image
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "hero_background_$i", array(
+        'label' => sprintf(__('Image du carrousel %d', 'theme_31w'), $i + 1),
+        'section' => 'hero_section',
+        'description' => ($i === 0) ? __('Cette image sera affichée par défaut', 'theme_31w') : '',
+    )));
+}
+
+
 /* ================================================  L'image de Background */ 
             // /* Configuration du champ */
             // $wp_customize->add_setting('hero_background', array(
@@ -144,44 +181,6 @@ function theme_31w_customize_register($wp_customize)
             //     'section' => 'hero_section',
             // )));
 
-
-/* ================================================  galerie image */ 
-         
-        ////////////////////// image 0
-            /* créer le champ */
-            $wp_customize->add_setting('hero_background_0', array(
-                'default' => '',
-                'sanitize_callback' => 'esc_url_raw',
-            ));
-            /* créer le contrôleur */
-            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_0', array(
-                'label' => __('Image en arrière plan base', 'theme_31w'),
-                'section' => 'hero_section',
-            )));
-
-
-        ////////////////////// image 1
-            /* créer le champ */
-            $wp_customize->add_setting('hero_background_1', array(
-                'default' => '',
-                'sanitize_callback' => 'esc_url_raw',
-            ));
-            /* créer le contrôleur */
-            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_1', array(
-                'label' => __('Image en arrière plan 1', 'theme_31w'),
-                'section' => 'hero_section',
-            )));
-        ////////////////////// image 2
-            /* créer le champ */
-            $wp_customize->add_setting('hero_background_2', array(
-                'default' => '',
-                'sanitize_callback' => 'esc_url_raw',
-            ));
-            /* créer le contrôleur */
-            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_2', array(
-                'label' => __('Image en arrière plan 2', 'theme_31w'),
-                'section' => 'hero_section',
-            )));
 
 /* ================================================  Couleur du texte de la section hero  (Champ couleur)*/ 
             /* Configuration du champ */

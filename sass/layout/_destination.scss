@@ -41,7 +41,6 @@
       padding: 1.2rem 1.5rem;
       margin: 0;
       color: #00475b;
-      font-family: "Montserrat", sans-serif;
       font-weight: 600;
       position: relative;
 
@@ -89,6 +88,14 @@
   display: none;
 }
 
+.accordeon__chk:checked ~ label{
+  background: linear-gradient(135deg, #3ebfab 0%, #2a9688 100%);
+  border-color: #3ebfab;
+}
+
+.accordeon__chk:checked ~ label h3,
+.accordeon__chk:checked ~ label h3:after{  color: #ffffff;}
+
 .accordeon__chk:checked ~ .accordeon__excerpt {
   max-height: 500px;
   padding: 1.5rem;
@@ -97,6 +104,7 @@
 .accordeon__chk:checked ~ .accordeon h3::after {
   content: "−";
 }
+.accordeon__btn{ display: flex; justify-content: end;}
 
 /* Liste des catégories */
 .list_categories {

@@ -48,7 +48,6 @@ function carte($post_id = null) {
     ?>
 
         <?php 
-        
         /* Affiche l'image "mise en avant" miniature */         
             if (has_post_thumbnail()) {
                     the_post_thumbnail('medium', array('class' => 'populaire__image'));
