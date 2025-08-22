@@ -37,7 +37,15 @@ $message_404 = get_theme_mod('erreur_404_message', 'Pas de panique, cher membre 
             <div class="erreur-404__destinations">
                 <h3 class="erreur-404__destinations-titre">Ou explorez nos destinations :</h3>
                 <nav class="erreur-404__nav">
-                   
+                    
+                    <?php
+                    wp_nav_menu(array(
+                        'menu' => "menu_404_destinations",
+                        'menu_class' => 'erreur-404__menu',
+                        'container' => false
+                    ));
+                    ?>
+
                 </nav>
             </div>
             
