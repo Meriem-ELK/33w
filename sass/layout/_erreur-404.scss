@@ -14,6 +14,7 @@
     // Container principal
     &__container {
         max-width: 900px;
+        width: 100%;
         text-align: center;
         color: #fff;
         padding: 2rem;
@@ -24,25 +25,10 @@
 
     // Titre principal
     &__titre {
-        font-size: 3rem;
+        font-size: clamp(1.5rem, 5vw, 3rem);
         margin-bottom: 1.5rem;
         color: #ffb347;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            @media (max-width: 1024px) {
-                &__titre {
-                    font-size: 3rem;
-                }
-            }
-            @media (max-width: 768px) {
-                 &__titre {
-                    font-size: 2.5rem;
-                }
-            }
-            @media (max-width: 480px) {
-                &__titre {
-                    font-size: 2rem;
-                }
-            }
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);   
     }
     // Message d'erreur
     &__message {

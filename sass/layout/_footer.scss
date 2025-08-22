@@ -133,6 +133,7 @@
   @media (max-width: 768px) {
     .footer-container {
       flex-direction: column;
+      grid-template-columns: 1fr;
     }
   }
 }
@@ -153,3 +154,8 @@
     margin: 0 auto;
 }
 
+@media (max-width: 480px) {
+        .footer-container-secondaire{ 
+            grid-template-columns: 1fr;
+        }
+}

@@ -707,6 +707,7 @@ section {
 @media (max-width: 768px) {
   .site-footer .footer-container {
     flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -726,6 +727,11 @@ section {
   margin: 0 auto;
 }
 
+@media (max-width: 480px) {
+  .footer-container-secondaire {
+    grid-template-columns: 1fr;
+  }
+}
 /* Section Populaire - Articles */
 .populaire {
   background-color: #f5f5f5;
@@ -1196,7 +1202,7 @@ section {
 
 /* Image de destination */
 .footer-destination-image {
-  max-width: 100%;
+  min-width: 100%;
   height: 200px;
   object-fit: cover;
   display: block;
@@ -1215,6 +1221,7 @@ section {
 }
 .erreur-404__container {
   max-width: 900px;
+  width: 100%;
   text-align: center;
   color: #fff;
   padding: 2rem;
@@ -1223,25 +1230,10 @@ section {
   backdrop-filter: blur(10px);
 }
 .erreur-404__titre {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
   margin-bottom: 1.5rem;
   color: #ffb347;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-@media (max-width: 1024px) {
-  .erreur-404__titre__titre {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 768px) {
-  .erreur-404__titre__titre {
-    font-size: 2.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .erreur-404__titre__titre {
-    font-size: 2rem;
-  }
 }
 .erreur-404__message {
   margin-bottom: 2.5rem;
