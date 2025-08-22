@@ -11,7 +11,7 @@ function icone_sociaux()
 ?>
     <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://github.com/Meriem-ELK/33w/tree/tp2" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="hhttps://github.com/eddytuto/33w-ete-25" class="hero__social-lien" target="_blank"><i class="fab fa-github"></i></a>
 <?php
 }
 
@@ -93,7 +93,11 @@ function carte($post_id = null) {
                     
                     foreach ($categories as $categorie) {
                         // Exclure la catégorie "Populaire" (par slug ou par nom)
-                        if ($categorie->slug !== 'populaire' && $categorie->name !== 'Populaire') {
+                        if (
+                             $categorie->slug !== 'populaire' && $categorie->name !== 'Populaire' &&
+                            $categorie->slug !== 'destination' && $categorie->name !== 'Destination'
+                            ) 
+                        {
                             echo '<a href="' . get_category_link($categorie->term_id) . '">' . $categorie->name . '</a>';
                         }
                     }

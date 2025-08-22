@@ -19,6 +19,69 @@ function theme_31w_customize_register($wp_customize)
         'priority' => 40,
     ));
 
+    /* ================================================*/
+    // NOUVELLE SECTION 404
+    $wp_customize->add_section('section_404', array(
+        'title' => __('Section d\'erreur 404', 'theme_31w'),
+        'priority' => 50,
+        'description' => __('Personnalisez votre page d\'erreur 404', 'theme_31w'),
+    ));
+
+/* ========================  SECTION 404  ================================================ */
+
+    /* Titre de la page 404 */
+    $wp_customize->add_setting('erreur_404_titre', array(
+        'default' => __('', 'theme_31w'),
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('erreur_404_titre', array(
+        'label' => __('Titre de la page 404', 'theme_31w'),
+        'section' => 'section_404',
+        'type' => 'text',
+    ));
+
+    /* Message de la page 404 */
+    $wp_customize->add_setting('erreur_404_message', array(
+        'default' => __('', 'theme_31w'),
+        'sanitize_callback' => 'sanitize_textarea_field'
+    ));
+
+    $wp_customize->add_control('erreur_404_message', array(
+        'label' => __('Message d\'erreur', 'theme_31w'),
+        'section' => 'section_404',
+        'type' => 'textarea',
+    ));
+
+    /* Image en arrière-plan pour la page 404 */
+    $wp_customize->add_setting('erreur_404_background_image', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_404_background_image', array(
+        'label' => __('Image d\'arrière-plan Erreur 404', 'theme_31w'),
+        'section' => 'section_404',
+        'description' => __('Choisissez une image d\'arrière-plan pour la page 404', 'theme_31w'),
+    )));
+
+    /* Couleur d'arrière-plan des boutons et zone de recherche */
+    $wp_customize->add_setting('erreur_404_couleur', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'erreur_404_couleur', array(
+        'label' => __('Couleur 404', 'theme_31w'),
+        'section' => 'section_404',
+        'description' => __('Couleur des boutons et de la zone de recherche', 'theme_31w'),
+    )));
+
+/* ================================================
+/* ================================================
+/* ================================================
+
+
 
 /* ================================================  Hero titre */ 
              /* Configuration du champ */ 
