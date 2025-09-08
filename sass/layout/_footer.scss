@@ -1,0 +1,110 @@
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px 20px;
+
+  .footer-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+
+    .header__menu-element {
+      padding: 0px;
+    }
+
+    h3 {
+      color: $couleur-primaire;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+
+  // Menus
+  .footer-links,
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  // Contact
+  .contact-info {
+    p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: $couleur-primaire;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Réseaux sociaux
+  .social-section {
+    margin: 30px 0;
+
+    h3 {
+      color: $couleur-primaire;
+      margin-bottom: 15px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      a {
+        color: $couleur-blanche;
+
+        i {
+          &:hover {
+            color: $couleur-primaire;
+          }
+        }
+      }
+    }
+  }
+
+  // Copyright
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    margin-top: 20px;
+
+    p {
+      color: #ccc;
+      margin: 0;
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  }
+}

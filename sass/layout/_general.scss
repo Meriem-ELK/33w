@@ -1,0 +1,204 @@
+// General CSS
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $police-texte;
+  line-height: 1.6;
+  color: $couleur-texte;
+  background-color: $couleur-blanche;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+section {
+  padding: 4rem 1rem;
+}
+
+// La case à cocher cachée qui contrôle le menu
+[id="menu-mobile-toggle"] {
+  display: none;
+}
+
+// Style menu mobile
+@media (max-width: 768px) {
+  main {
+    padding: 0 10px;
+  }
+  [id="menu-mobile-toggle"]:checked {
+    ~ .header__menu-toggle::before {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      content: "\f00d";
+      color: $couleur-primaire;
+    }
+
+    ~ .header__navigation .header__navigation-nav {
+      display: block;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      background-color: $couleur-blanche;
+      z-index: 1;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  [id="menu-mobile-toggle"]:checked
+    ~ .header__navigation
+    .header__navigation-nav {
+    background-color: transparent;
+  }
+}
+
+/* ------------- Page 404 */
+
+.error-page {
+  background: $couleur-blanche;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+.error-page__number {
+  font-family: $police-titres;
+  font-weight: 700;
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: $couleur-primaire;
+  margin-bottom: 1rem;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 71, 91, 0.1);
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.error-page__title {
+  font-family: $police-titres;
+  font-weight: 700;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: $couleur-noir;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.error-page__message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: $couleur-clair;
+  border-radius: 4px;
+  border-left: 4px solid $couleur-accent;
+  font-size: 0.9rem;
+  color: $couleur-gris-fonce;
+}
+
+.error-page__button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: $couleur-secondaire;
+  color: $couleur-blanche;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: $police-texte;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  &:hover {
+    background-color: $couleur-primaire;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(62, 191, 171, 0.3);
+  }
+}
+
+.fa-temperature-low {
+  color: #64b5f6;
+}
+
+.fa-temperature-high {
+  color: #f44336;
+}
+
+.fa-thermometer-half {
+  color: #ff9800;
+}
+
+.category__titre:hover {
+  color: $couleur-accent;
+}
+
+.post__meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}

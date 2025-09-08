@@ -1,0 +1,66 @@
+// Styles de la section hero
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(images/acores.jpg);
+  background-position: center;
+  background-size: cover;
+
+  &__contenu {
+    padding: 2rem;
+    color: $couleur-noir;
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  &__description {
+    max-width: 580px;
+    margin-bottom: 1rem;
+  }
+
+  &__texte {
+    margin-bottom: 0.5rem;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    &-info {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__inscrire-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: $couleur-secondaire;
+    color: $couleur-blanche;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    max-width: fit-content;
+
+    &:hover {
+      background-color: $couleur-primaire;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+
+    &-lien {
+      &:hover {
+        color: $couleur-primaire;
+      }
+    }
+  }
+}
